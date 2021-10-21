@@ -5,6 +5,7 @@
     "description": "A collection of tools to control Roland the robot.",
     "scripts": {
         "dev": "svelte-kit dev",
+        "devHost": "svelte-kit dev --host",
         "build": "svelte-kit build",
         "preview": "svelte-kit preview",
         "check": "svelte-check --tsconfig ./tsconfig.json",

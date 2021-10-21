@@ -115,7 +115,7 @@
                     >
                 </div>
                 {#if debugJoystick}
-                    <div class="mx-auto text-center mb-6">
+                    <div class="mx-auto text-center mb-6 overflow-hidden">
                         <p>{JSON.stringify(deadPolar)}</p>
                         <p>{JSON.stringify(scaledSpeed)}</p>
                     </div>
