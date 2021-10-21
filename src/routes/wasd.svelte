@@ -1,11 +1,12 @@
 <script lang="ts">
     import SquareDisplay from "$lib/components/SquareDisplay.svelte";
 
-    import * as Roblib from "$lib/roblib";
+    import * as Roblib from "@kris030/roblib";
+    import { io } from "socket.io-client";
     const debug = true;
     let initPromise = debug
         ? Promise.resolve()
-        : Roblib.init("http://192.168.0.1:5000");
+        : Roblib.init(io, "192.168.0.1:5000");
     let speed = 50;
     let started = false;
     const speeds: { left: number; right: number }[][] = [

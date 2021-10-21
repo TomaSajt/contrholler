@@ -1,6 +1,6 @@
 <script lang="ts">
     export let disabled = false;
-    export let color: "blue" | "green" | "yellow" | "red" = "blue";
+    export let color: "blue" | "green" | "yellow" | "red" | "gray" = "blue";
     export let onClick: (
         this: HTMLButtonElement,
         event: MouseEvent & { currentTarget: EventTarget & HTMLButtonElement }
@@ -13,6 +13,7 @@
     class:btn-green={color === "green"}
     class:btn-yellow={color === "yellow"}
     class:btn-red={color === "red"}
+    class:btn-gray={color === "gray"}
     {disabled}
     on:click={onClick}
 >
@@ -21,39 +22,32 @@
 
 <style lang="postcss">
     .btn-blue {
-        @apply bg-blue-500;
+        background-color: #11F;
     }
     .btn-blue:hover {
-        @apply bg-blue-700;
+        background-color: #22F;
     }
-    .btn-blue:disabled {
-        @apply bg-blue-500;
+    .btn-gray {
+        @apply bg-gray-500;
+    }
+    .btn-gray:hover {
+        @apply bg-gray-700;
     }
     .btn-green {
-        @apply bg-green-500;
+        background-color: #0F0;
     }
     .btn-green:hover {
-        @apply bg-green-700;
-    }
-    .btn-green:disabled {
-        @apply bg-green-500;
-    }
-    .btn-yellow {
+        background-color: #2F2;
+    }    .btn-yellow {
         @apply bg-yellow-500;
     }
     .btn-yellow:hover {
         @apply bg-yellow-700;
     }
-    .btn-yellow:disabled {
-        @apply bg-yellow-500;
-    }
     .btn-red {
-        @apply bg-red-500;
+        background-color: #F00;
     }
     .btn-red:hover {
-        @apply bg-red-700;
-    }
-    .btn-red:disabled {
-        @apply bg-red-500;
+        background-color: #F22;
     }
 </style>
