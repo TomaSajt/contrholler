@@ -1,12 +1,12 @@
 <script lang="ts">
     import SquareDisplay from "$lib/components/SquareDisplay.svelte";
 
-    import * as Roblib from "@kris030/roblib";
+    import { move,init } from "@kareszklub/roblib-client";
     import { io } from "socket.io-client";
     const debug = true;
     let initPromise = debug
         ? Promise.resolve()
-        : Roblib.init(io, "192.168.0.1:5000");
+        : init(io, "192.168.0.1:5000");
     let speed = 50;
     let started = false;
     const speeds: { left: number; right: number }[][] = [
@@ -43,7 +43,7 @@
     }
     function sendUpdate() {
         if (!debug) {
-            Roblib.move({
+            move({
                 left: normalSpeed.left * speed,
                 right: normalSpeed.right * speed,
             });
